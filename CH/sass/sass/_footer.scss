@@ -1,0 +1,115 @@
+$width_25: 25%;
+
+footer {
+    @include box-sizing(border-box);
+    text-align: left;
+    font-size: 0.813em;
+    .container{
+        background: #fff;
+        @include gutter();
+        div{
+            padding-top: 1em;
+            padding-bottom: 1em;
+            &:nth-child(1){
+                @include make-xs-column(12);
+                @include make-sm-column(6);
+                @include make-md-column(6);
+                @include make-lg-column(6);
+            }
+            &:nth-child(2){
+                @include make-xs-column(12);
+                @include make-sm-column(6);
+                @include make-md-column(6);
+                @include make-lg-column(6);
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $primaryColor;
+        &:hover,
+        &:focus {
+            color: darken($primaryColor, 10);
+        }
+    }
+    // .footer_logo {
+    //     @include make-xs-column(8);
+    //     @include make-sm-column(3);
+    //     @include make-md-column(3);
+    //     @include make-lg-column(3)
+    //     @include gutter();
+    // }
+    .footer_info {
+        @include gutter();
+        @include clearfix();
+        img{ padding-right: 15px; }
+        img, p.TxT{ float: left; }
+        p.TxT{
+            margin: 0;
+            &:after{
+                @include clearfix();
+            }
+        }
+    }
+    // .footer_icon {
+    //     @include make-xs-column(12);
+    //     @include make-sm-column(6);
+    //     @include make-md-column(6);
+    //     @include make-lg-column(6);
+    //     @include gutter();
+    // } 
+    // 版權連結
+    .footer_link {
+        @include li-reset();
+        li {
+            float: left;
+            display: block;
+            width: $width_25 * .95 ;
+            margin: 0px 5px 5px 0px;
+            // @include clearfix();
+            @media screen and (max-width: 1020px) {
+                width: $width_25 * 2 * .95;
+            }
+            a {
+                display: block;
+                padding-top: .75em;
+                padding-bottom: .75em;
+                background: lighten($color-gray, 10);
+                color: #555;
+                font-size: 1.125em;
+                font-weight: bold;
+                text-align: center;
+                @include border-radius(3px);
+                @include transition(all, .3s, ease-out);
+                &:hover,
+                &:focus {
+                    background: darken($primaryColor, 0);
+                    color: #fff;
+                }
+            }
+        }
+    }
+    p {
+        line-height: 1.65em;
+    }
+    .update,
+    .counter {
+        display: inline-block;
+        margin-left: 5px;
+        line-height: 2.2em;
+        em {
+            font-style: normal;
+            color: $primaryColor;
+            padding: 0 .5em;
+        }
+    }
+    // .footer_icon {
+    //     a {
+    //         display: inline-block;
+    //         vertical-align: top;
+    //     }
+    //     img {
+    //         max-width: 120px;
+    //     }
+    // }
+}

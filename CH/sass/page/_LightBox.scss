@@ -1,0 +1,84 @@
+@charset "utf-8";
+@import "compass";
+
+.QP{
+    input[type="checkbox"],
+    input[type="radio"]{
+        width: 30px;
+        height: 30px !important;
+        margin: 4px 6px 4px 15px !important;
+        &:first-child{
+            margin-left: 0 !important;
+        }
+    }
+    button[type="submit"]{}
+    button[type="button"]{
+        display: block;
+        margin: 10px auto;
+        padding: 5px 30px !important;
+        background: #666;
+        color: #fff;
+        font-size: 1em;
+    }
+    form{
+        @include clearfix();
+        margin: 15px 0;
+    }
+    
+    @include clearfix();
+    .Heading{
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(2);
+        @include make-lg-column(2);
+        line-height: 46px;
+        margin: 0;
+        text-align: center;
+        &:after{ content:"："; }
+        @media screen and (max-width: 1024px){
+           line-height: 32px;
+        }
+        @media screen and (max-width: 991px) {
+            text-align: left;
+        }
+    }
+    .Input{
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(10);
+        @include make-lg-column(10);
+        input{
+            margin: 4px 0;
+            height: 40px;
+        }
+    }
+    button{
+        // @include make-xs-column(3);
+        // @include make-sm-column(3);
+        // @include make-md-column(2);
+        // @include make-lg-column(2);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .form-check{
+        text-align: center;
+        margin: 15px 0;
+    }
+    // 驗證碼
+    .Verification_code{
+        .Heading{}
+        .Input{
+            img.Code{
+                width: 15%;
+                height: 40px;
+                margin: 4px 0;
+                padding-right: 10px;
+                display: block;
+                float: left;
+            }
+            input{ width: 85%;}
+            span{ display: block;}
+        }
+    }
+}
+

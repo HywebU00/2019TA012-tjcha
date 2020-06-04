@@ -1,0 +1,616 @@
+body {
+
+    &.noscroll {
+        // position: fixed!important;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden !important;
+    }
+}
+
+
+// 整體共用container樣式
+.container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: $container-max;
+}
+
+.main {
+    position: relative;
+    margin: 0 auto;
+    padding: 0; // max-width: $container-max; 可先設定一個中央區塊最大寬，限制accesskey對齊
+    @include screen('mobile') {
+        padding-top: 55px;
+    }
+    // 內頁標題設定
+    h2{
+        line-height: 1.25em;
+    }
+}
+
+// 首頁區塊設定
+.section {
+    // padding: 0em 0 3em;
+    text-align: center;
+    // [class^="col"] {
+        border: 2px solid #FFF;
+        background: #DEDEDE;
+    //     min-height: 250px;
+    //     color: $primaryColor;
+    //     text-align: center;
+    //     line-height: 250px;
+    //     font-size: 1.5em;
+    //     font-weight: bold;
+        @include box-sizing();
+    // }
+    &+.section {
+        padding-top: 2em;
+    }
+}
+
+// 滿版
+.col-12 {
+    .col {
+        @include make-xs-column(12); //576px  width:100%
+        @include make-sm-column(12); //768px  width:100%
+        @include make-md-column(12); //992px  width:100%
+        @include make-lg-column(12); //1400px width:100%
+        border: none; // @include gutter(); //gutter 代表左右要留白
+    }
+}
+
+
+
+.main {
+    .container {
+        margin: 0px auto;
+        max-width: $container-max;
+    }
+
+    .content {
+        @include make-xs-column(12); //576px  width:100%
+        @include make-sm-column(12); //768px  width:50%
+        @include make-md-column(12); //992px  width:33.3%
+        @include make-lg-column(12); //1400px width:33.3%
+        @include gutter(100px);
+        @include border-radius(5px);
+        display: block;
+        min-height: 600px;
+        background: #fff;
+        -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.20);
+           -moz-box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.20);
+                    box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.20);
+        h2.content_title{
+            text-align: center;
+            line-height: 2.2em;
+        }
+        section{
+            padding: 1em 0;
+            @include clearfix();
+        }  
+        .web_link{
+            @include make-xs-column(12);
+            @include make-sm-column(6);
+            @include make-md-column(6);
+            @include make-lg-column(6);
+        }
+        .file_download{
+            @include make-xs-column(12);
+            @include make-sm-column(6);
+            @include make-md-column(6);
+            @include make-lg-column(6);
+        }
+    }
+}
+
+
+
+// Lize自訂
+body{
+    background: linear-gradient(270deg, #13c4ec, #0c93bb);
+}
+.header{ @include clearfix(); }
+
+// 首頁
+.Mp_wrap{
+    .Visual{
+        background: image-url('basic/bg_mp_visual.jpg') left top no-repeat;
+        position: relative;
+        @include clearfix();
+        // @include gutter(80px);
+        .header{
+            position: absolute;
+            z-index: 10000;
+            width: 100%;
+            padding: 0 40px;
+            @include box-sizing();
+            section{
+                @include clearfix();
+                h1{
+                    margin: .25em 0;
+                    float: left;
+                    img{}
+                }
+                .Multi_Conrtrol{
+                    margin: 1em 0;
+                    width: 520px;
+                    float: right;
+                    button{ display: none;}
+                    // 搜尋
+                    .search{
+                        float: right;
+                        .sb-search {
+                            position: relative;
+                            margin-top: 10px;
+                            width: 100%;
+                            min-width: 60px;
+                            height: 42px;
+                            float: right;
+                            -webkit-transition: width 0.3s;
+                            -moz-transition: width 0.3s;
+                            transition: width 0.3s;
+                            -webkit-backface-visibility: hidden;
+                        }
+                        .sb-search-input {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            outline: none;
+                            background: #fff;
+                            width: 100%;
+                            height: 40px;
+                            margin: 0;
+                            z-index: 10;
+                            padding: 20px 65px 20px 20px;
+                            font-family: inherit;
+                            color: #2c3e50;
+                        }
+                        .sb-search-input::-webkit-input-placeholder,
+                        .sb-search-input:-moz-placeholder,
+                        .sb-search-input::-moz-placeholder,
+                        .sb-search-input:-ms-input-placeholder{
+                            color: #333;
+                        }
+                        .sb-icon-search
+                        // , .sb-search-submit
+                        {
+                            width: 60px;
+                            height: 42px;
+                            display: block;
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            padding: 0;
+                            margin: 0;
+                            line-height: 60px;
+                            text-align: center;
+                            cursor: pointer;
+                        }
+                        // .sb-search-submit {
+                        //     background: #fff; /* IE needs this */
+                        //     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+                        //     filter: alpha(opacity=0); /* IE 5-7 */
+                        //     opacity: 0;
+                        //     color: transparent;
+                        //     border: none;
+                        //     outline: none;
+                        //     z-index: -1;
+                        // }
+                        .sb-icon-search {
+                            color: #fff;
+                            background: #e67e22;
+                            z-index: 90;
+                            font-size: 22px;
+                            font-family: 'icomoon';
+                            speak: none;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-variant: normal;
+                            text-transform: none;
+                            -webkit-font-smoothing: antialiased;
+                            border-radius: 0 5px 5px 0;
+                        }
+                        .sb-icon-search:before {
+                            content: "\e000";
+                            display: block;
+                            margin-top: -9px;
+                        }
+                        .keywordHot {
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-left: .5em;
+                            padding: .3em 0;
+                            color: #fff;
+                            ul {
+                                display: inline-block;
+                                font-size: .938em;
+                                line-height: 1.65em;
+                                margin: 0;
+                                padding: 0;
+                                &:before {
+                                    display: inline-block;
+                                    content: "熱門關鍵字：";
+                                    float: left;
+                                }
+                                li {
+                                    margin-left: .25em;
+                                    padding: 0;
+                                    display: inline-block;
+                                    &:after{
+                                        content: " | ";
+                                    }
+                                    &:last-child:after{
+                                        content: "";
+                                    }
+                                }
+                                a {
+                                    color: #fff;
+                                    &:hover,
+                                    &:focus {
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                    // 網站導覽 語言 字級
+                    .Helps{
+                        float: right;
+                        color: #fff;
+                        .navigation{
+                            .links{
+                                float: left;
+                                a{
+                                    color: #fff;
+                                    &:after{
+                                        content: " / ";
+                                    }
+                                    &:last-child:after{
+                                        content: "";
+                                    }
+                                }
+                            }
+                            .Word-level{
+                                float: right;
+                                margin-left: 15px;
+                                &:before {
+                                    display: inline-block;
+                                    content: "字級：";
+                                    float: left;
+                                }
+                                a{
+                                    color: #fff;
+                                    padding: 5px;
+                                    border-radius: 3px;
+                                    &:hover,
+                                    &:focus{
+                                        background: darken($color-gray, 40);
+                                    }
+                                }
+                                a.Active{ background: $primaryColor; }
+                            }
+                        }
+                    }
+                }
+            }
+            // .menu{
+            //     // width: 680px;
+            //     >ul{
+            //         @include border-radius(3px);
+            //     }
+            //     // position: absolute;
+            //     // top: 76px;
+            //     background-color: rgb(47,170,183); // Old browsers
+            //     @include filter-gradient(#2faab7, #1a84a0, vertical); // IE6-9
+            //     @include background-image(linear-gradient(top, rgba(47,170,183,1) 0%,rgba(26,132,160,1) 100%));
+            //     @media screen and (min-width: 993px) {}
+            // }.scrollmenu{}
+            
+            nav.scrollmenu{
+                position: relative;
+                @include clearfix();
+                a{ display: block; }
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+                li{ position: relative; }
+                /* 第一層 */
+                >ul>li{
+                  float: left;
+                  // width: 300px;
+                  text-align: center;
+                  border-right: 1px solid #000;
+                  display: block;
+                  a{ padding: 10px 30px;}
+                }
+                >ul>li:last-child{
+                  border-right: 1px solid transparent;
+                }
+                ul>li>a{
+                  background: rgba(0,0,0,.5);
+                  line-height: 40px;
+                  color:#fff;
+                }
+
+                ul>li>a:hover,
+                ul>li:hover{ background: rgba(0,0,0,.75);}
+                ul>li:hover>ul{ display: block; }
+
+                /* 第二層 */
+                li ul{
+                  position: absolute;
+                  left: 0;
+                  top:60px;
+                  width: 300px;
+                  z-index: 99999;
+                  // border: 1px solid #000;
+                  // display: none;
+                }
+
+                ul>li:hover>ul{
+                  display: block;
+                }
+
+                /* 第三層 */
+                li li{}
+                li li ul{
+                  position: absolute;
+                  left: 300px;
+                  top:0;
+                }
+
+            }
+        }
+        // header fix
+        .header.fixed {
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            right: 0;
+            top: 0;
+            box-shadow: rgba(0, 0, 0, .5) 0 0 25px;
+        }
+        .Identity{
+            section{
+                @include make-xs-column(6);
+                @include make-sm-column(6);
+                @include make-md-column(6);
+                @include make-lg-column(6);
+            }
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    .header h1 img{ width: 100%; }
+    .Mp_wrap{
+        .Visual{
+            @include gutter();
+            .header{
+                .Multi_Conrtrol{
+                    margin: 0;
+                    width: 100%;
+                    float: left;
+                    .Helps,
+                    .search{
+                        float: none;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .Mp_wrap{
+        .Visual{
+            @include gutter(0);
+            position: relative;
+            .header{
+                position: fixed;
+                z-index: 1000;
+                height: 60px;
+                background: #fff;
+                width: 100%;
+                padding: 0 0;
+                h1{
+                    max-width: 50%;
+                    margin: 0 0;
+                    height: 55px;
+                    padding-top: 5px;
+                    padding-left: 10px;
+                }
+                .Multi_Conrtrol{
+                    button{
+                        display: block; 
+                        position: absolute;
+                        width: 60px;
+                        height: 60px;
+                        right: 80px;
+                        margin: 0;
+                        top: 0;
+                        z-index: 1000;
+                        background: #fff;
+                        color: #000;
+                        border-radius: 0;
+                        border: 0;
+                        &:hover, &:focus, &:active{
+                            color: $secondaryColor;
+                        }
+                    }
+                    .search{
+                        position: fixed;
+                        width: 100%;
+                        top: 0;
+                        button{
+                            right: 80px;
+                        }
+                        
+                        .inner_wrap{
+                            width: 300px;
+                            float: right;
+                            margin-right: 80px;
+                            .sb-search {
+                                margin-top: 0;
+                                height: 60px;
+                            }
+                            .sb-search-input {
+                                background: $primaryColor;
+                                color: #fff;
+                                height: 60px;
+                            }
+                            .sb-search-input::-webkit-input-placeholder,
+                            .sb-search-input:-moz-placeholder,
+                            .sb-search-input::-moz-placeholder,
+                            .sb-search-input:-ms-input-placeholder{
+                                color: #fff;
+                                height: 60px;
+                            }
+                            .sb-icon-search{ height: 60px; }
+                            .sb-icon-search {
+                                width: 60px;
+                                color: #fff;
+                                background: darken($primaryColor, 20);
+                                line-height: 76px;
+                            }
+                            .keywordHot {
+                                margin-left: 0;
+                                padding: .75em 1em;
+                                background: $secondaryColor;
+                            }
+                        }
+                    }
+                    .Helps{
+                        top: 60px;
+                        width: 100%;
+                        background: $primaryColor;
+                        button{
+                            right: 0;
+                        }  
+                        .navigation{
+                            @include gutter();
+                            padding-top: 1em;
+                            padding-bottom: 1em;
+                            .links{
+                                float: none;
+                                a{
+                                    text-align: center;
+                                    display: inline-block;
+                                    padding: 1em 0;
+                                    &:after{ content: ""; }
+                                }
+                                a:nth-child(1),
+                                a:nth-child(2),
+                                a:nth-child(3){
+                                    width: 32%;
+                                    &:before{
+                                        content:"A";
+                                        display: block;
+                                    }
+                                }
+                                a:nth-child(2){
+                                    border-left: solid 1px #f5f5f5;
+                                    border-right: solid 1px #f5f5f5;
+                                }
+                                a:nth-child(4),
+                                a:nth-child(5){
+                                    width: 49%;
+                                }
+                                
+                            }
+                            .Word-level{
+                                float: none;
+                                display: flex;
+                                width: 100%;
+                                margin-left: 0;
+                                @include box-sizing();
+                                @include clearfix();
+                                &:before {
+                                    content: "";
+                                }
+                                a{
+                                    background: darken($primaryColor, 20);
+                                    float: left;
+                                    text-align: center;
+                                    &:nth-child(1){ flex:1; }
+                                    &:nth-child(2){
+                                        flex:1;
+                                        margin: 0 .25em;
+                                    }
+                                    &:nth-child(3){ flex:1; }
+                                    // padding: 5px;
+                                    &:hover,
+                                    &:focus{
+                                        background: darken($color-gray, 40);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 內頁
+.wrap_inner{
+    >.container{
+        background-color: #fff;
+        background-image: image-url('basic/bg_wrapinner_top.jpg'),
+                          image-url('basic/bg_wrapinner_bottom.jpg');
+        background-position: left top,
+                             left bottom;
+        background-repeat: no-repeat;
+        @include gutter();
+        @media screen and (min-width: 993px) {
+            @include gutter(80px);
+        }
+    }
+    .Social_info{
+        margin-bottom: 20px;
+        .share{
+            @include make-xs-column(12);
+            @include make-sm-column(5);
+            @include make-md-column(4);
+            @include make-lg-column(4);
+        }
+        .address{
+            @include make-xs-column(12);
+            @include make-sm-column(7);
+            @include make-md-column(8);
+            @include make-lg-column(8);
+            span{
+                margin-right: 20px;
+                line-height: 1.8;
+                &:before{
+                    content:'|';
+                    padding-right: 10px;
+                }
+            }
+            a.place{
+                margin-left: 15px;
+                color: $primaryColor;
+                padding: 3px 10px 3px 2px;
+                &:hover, &:focus{
+                    background: $primaryColor;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+}
+
+.main_title{
+    text-align: center;
+    font-size: 2em;
+    line-height: 2.2;
+    span{
+        border-bottom: solid 1px #555;
+        padding: .25em 2.5em;
+        letter-spacing: 5px;
+    }
+}

@@ -1,0 +1,23 @@
+@media print{
+	html { background:#fff; }
+	body { background:#fff; color:#000;}
+	h1 { display:block; font-size:24px; color:#000; content:"網頁標題"}
+
+	.main_title{ line-height: 0;}
+	.Page_wrap .main{ 
+		margin: 0 auto;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.Download .Box .Inner_wrap .File_type{
+		border-left:0;
+		padding-left: 0;
+	}
+
+	.Visual, #GoTop, .fatfooter, footer,
+	.Side, .Banner, .Social_info,
+	.Page_wrap .main .content .Extends,
+	.Page_wrap .main .content .Coulmn .Prev,
+	.Page_wrap .main .content .Coulmn .Next{ display: none; }
+}
