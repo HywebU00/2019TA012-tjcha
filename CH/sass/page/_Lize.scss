@@ -3066,6 +3066,8 @@ h3{ color: $primaryColor; }
                     }
                 }
             }
+
+
             // 延伸閱讀
             .Extends{
                 display: block;
@@ -3133,6 +3135,28 @@ h3{ color: $primaryColor; }
                         }
                     }
                 }
+                @media screen and (max-width: 768px){
+                    padding-left: 0;
+                }
+            }
+            // CP4
+            // 分欄2：單張圖文
+            .Column2{
+                @include clearfix();
+                img{
+                    @include make-xs-column(12);
+                    @include make-sm-column(12);
+                    @include make-md-column(4);
+                    @include make-lg-column(4);
+                    margin-bottom: 1em;
+                }
+                .BookInfo{
+                    @include make-xs-column(12);
+                    @include make-sm-column(12);
+                    @include make-md-column(8);
+                    @include make-lg-column(8);
+                }
+
             }
         }
         @media screen and (max-width: 1024px) {

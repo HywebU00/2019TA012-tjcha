@@ -3,9 +3,9 @@
 
 //-------------------------------------------------------------顏色---------//
 // 定義顏色 此顏色可自由變換
-$primaryColor:				#7629b2;				//主色				
-$secondaryColor:			#6680e9; 					//輔助色
-$lightColor:				#e3597a;					//焦點
+$primaryColor:				#3abec3;				//主色				
+$secondaryColor:			#199f7e; 					//輔助色
+$lightColor:				#f17215;					//焦點
 // 但注意真實顏色與語意的關聯必須易於辨識
 $color-default: 			#DDD;
 $color-gray: 				#CCC;
@@ -34,7 +34,7 @@ $font-size:					16px;
 // 格線系統
 $grid-columns:              12 !default;			   //格線欄位數
 $grid-gutter-width:         30px !default;			   //左右padding
-$container-max:             1000px !default;		   //container最大寬
+$container-max:             1280px !default;		   //container最大寬
 
 //mediaquery
 $screen-lg:        			1400px !default;  	       //電腦
