@@ -3145,14 +3145,14 @@ h3{ color: $primaryColor; }
                 @include clearfix();
                 img{
                     @include make-xs-column(12);
-                    @include make-sm-column(12);
+                    @include make-sm-column(4);
                     @include make-md-column(4);
                     @include make-lg-column(4);
                     margin-bottom: 1em;
                 }
                 .BookInfo{
                     @include make-xs-column(12);
-                    @include make-sm-column(12);
+                    @include make-sm-column(8);
                     @include make-md-column(8);
                     @include make-lg-column(8);
                 }
